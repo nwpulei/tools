@@ -1,5 +1,5 @@
 **说明**   
-访问主页 readfree.me  
+访问主页 [readfree.me](http://readfree.me)  
 必要时调用登录，并存储cookie,避免每次访问时均要登录的问题。  
 **使用方法**  
 修改config 文件中的参数  
