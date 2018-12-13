@@ -13,7 +13,8 @@
 |  COOKIE_FILE   |  cookie 临时存储路径   |   /tmp/cookies  |
 |  IMAGE_FILE   |  验证码临时储存路径   |  /tmp/a.png   |
 
-bash ./readfree.sh  
+    bash ./readfree.sh   
+
 **依赖说明**  
 需要用到下列工具curl,grep,sed,awk,md5(或者md5sum),date  
 ****关于自动登录****  
@@ -22,6 +23,7 @@ bash ./readfree.sh
 ***其他说明***  
 脚本可以独立使用  
 例如 验证码识别(不需要配置config)  
-bash imageReg.sh "$IMAGE_FILE" "$fateadmPDaccount" "$fateadmPDKey"  
+     bash imageReg.sh "$IMAGE_FILE" "$fateadmPDaccount" "$fateadmPDKey"  
+
 单纯登录readfree(需要配置config)  
-bash login.sh  
+     bash login.sh  
