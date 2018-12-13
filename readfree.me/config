@@ -1,0 +1,14 @@
+#readfree account @-->%40
+email="readfreeEmail%40gmail.com"
+#readfree password
+password="readfreePassword"
+
+#fateadm account
+fateadmPDaccount='1080000'
+#fateadm key
+fateadmPDKey='xxxxxxxxxxxxxxxxxxx'
+
+#save cookie file
+COOKIE_FILE="/tmp/cookies"
+#save image
+IMAGE_FILE="/tmp/a.png"
