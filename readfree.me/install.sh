@@ -11,10 +11,10 @@ echo ""
 
 mkdir readfree.me 
 cd readfree.me
-wget --no-cache --no-check-certificate https://raw.githubusercontent.com/nwpulei/tools/master/readfree.me/config
-wget --no-cache --no-check-certificate https://raw.githubusercontent.com/nwpulei/tools/master/readfree.me/README.md
-wget --no-cache --no-check-certificate https://raw.githubusercontent.com/nwpulei/tools/master/readfree.me/imageReg.sh
-wget --no-cache --no-check-certificate https://raw.githubusercontent.com/nwpulei/tools/master/readfree.me/login.sh
-wget --no-cache --no-check-certificate https://raw.githubusercontent.com/nwpulei/tools/master/readfree.me/readfree.sh
+wget --no-cache --no-check-certificate https://raw.githubusercontent.com/nwpulei/tools/master/readfree.me/config 2>/dev/null
+wget --no-cache --no-check-certificate https://raw.githubusercontent.com/nwpulei/tools/master/readfree.me/README.md 2>/dev/null
+wget --no-cache --no-check-certificate https://raw.githubusercontent.com/nwpulei/tools/master/readfree.me/imageReg.sh 2>/dev/null
+wget --no-cache --no-check-certificate https://raw.githubusercontent.com/nwpulei/tools/master/readfree.me/login.sh 2>/dev/null
+wget --no-cache --no-check-certificate https://raw.githubusercontent.com/nwpulei/tools/master/readfree.me/readfree.sh 2>/dev/null
 
 echo "   安装完成"
