@@ -27,19 +27,24 @@ function calcSign(){
 	calcMd5 "$1$3$csign"
 }
 
-img_data=`base64 -i "$imagePath" | sed 's/+/%2B/g;s/\//%2F/g;s/=/%3D/g'`
+img_data=`base64 -i "$imagePath" `
 
 #set -x
 
 timestamp=`date +%s`
 sign=`calcSign "$user_id" "$ukey" "$timestamp"`
-data="user_id=$user_id&timestamp=$timestamp&sign=$sign&predict_type=$predict_type&img_data=$img_data"
+#data="user_id=$user_id&timestamp=$timestamp&sign=$sign&predict_type=$predict_type&img_data=$img_data"
 
 respon=`curl 'http://pred.fateadm.com/api/capreg' -H 'Pragma: no-cache' -H 'Origin: http://www.fateadm.com' \
 -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8' \
 -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36' \
 -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: */*' -H 'Cache-Control: no-cache' \
---data "$data" --compressed -vv 2>/dev/null`
+--data-urlencode "user_id=$user_id" \
+--data-urlencode "timestamp=$timestamp" \
+--data-urlencode "sign=$sign" \
+--data-urlencode "predict_type=$predict_type" \
+--data-urlencode "img_data=$img_data" \
+--compressed -vv 2>/dev/null`
 echo $respon >&2
 #{"RetCode":"0","ErrMsg":"","RequestId":"20xxxxxxxxxx","RspData":"{\"result\": \"uaak\"}"}
 echo "$respon" | sed 's/\\//g'| grep -o  "result.*" | awk -F'"' '{print $3}'
